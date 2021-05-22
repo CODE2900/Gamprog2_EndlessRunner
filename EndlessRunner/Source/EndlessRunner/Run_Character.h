@@ -25,8 +25,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		class USpringArmComponent* SpringArm;
 
-	void MoveForward(float scale);
-	void MoveSide(float scale);
+	//void MoveForward(float scale);
+	//void MoveSide(float scale);
 
 public:	
 	// Called every frame

@@ -22,6 +22,9 @@ public:
 	virtual void SetupInputComponent() override;
 	virtual void Tick(float DeltaTime) override;
 
+	void MoveForward(float scale);
+	void MoveRight(float scale);
+
 protected:
 	virtual void BeginPlay() override;
 private:

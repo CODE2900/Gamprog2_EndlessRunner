@@ -35,7 +35,7 @@ void ARun_Character::BeginPlay()
 	Super::BeginPlay();
 	
 }
-void ARun_Character::MoveForward(float scale)
+/*void ARun_Character::MoveForward(float scale)
 {
 	const FRotator Rotation = Controller->GetControlRotation();
 	const FRotator YawRotation(0, Rotation.Yaw, 0);
@@ -53,7 +53,7 @@ void ARun_Character::MoveSide(float scale)
 	// get right vector 
 	const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 	AddMovementInput(Direction, scale);
-}
+}*/
 // Called every frame
 void ARun_Character::Tick(float DeltaTime)
 {
@@ -65,8 +65,8 @@ void ARun_Character::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAxis("MoveForward", this, &ARun_Character::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &ARun_Character::MoveSide);
+	//PlayerInputComponent->BindAxis("MoveForward", this, &ARun_Character::MoveForward);
+	//PlayerInputComponent->BindAxis("MoveRight", this, &ARun_Character::MoveSide);
 
 }
 

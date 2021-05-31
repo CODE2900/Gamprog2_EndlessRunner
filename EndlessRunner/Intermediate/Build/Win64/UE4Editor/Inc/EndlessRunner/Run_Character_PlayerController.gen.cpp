@@ -58,7 +58,7 @@ void EmptyLinkFunctionForGeneratedCodeRun_Character_PlayerController() {}
 		{ "ModuleRelativePath", "Run_Character_PlayerController.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARun_Character_PlayerController_Statics::NewProp_RunCharacter = { "RunCharacter", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ARun_Character_PlayerController, RunCharacter), Z_Construct_UClass_ARun_Character_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ARun_Character_PlayerController_Statics::NewProp_RunCharacter_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ARun_Character_PlayerController_Statics::NewProp_RunCharacter_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARun_Character_PlayerController_Statics::NewProp_RunCharacter = { "RunCharacter", nullptr, (EPropertyFlags)0x0020080000020015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ARun_Character_PlayerController, RunCharacter), Z_Construct_UClass_ARun_Character_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ARun_Character_PlayerController_Statics::NewProp_RunCharacter_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ARun_Character_PlayerController_Statics::NewProp_RunCharacter_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ARun_Character_PlayerController_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARun_Character_PlayerController_Statics::NewProp_RunCharacter,
 	};
@@ -89,7 +89,7 @@ void EmptyLinkFunctionForGeneratedCodeRun_Character_PlayerController() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ARun_Character_PlayerController, 3813142267);
+	IMPLEMENT_CLASS(ARun_Character_PlayerController, 4079559983);
 	template<> ENDLESSRUNNER_API UClass* StaticClass<ARun_Character_PlayerController>()
 	{
 		return ARun_Character_PlayerController::StaticClass();

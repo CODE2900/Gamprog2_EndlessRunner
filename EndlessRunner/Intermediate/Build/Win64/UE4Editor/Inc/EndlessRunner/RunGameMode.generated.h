@@ -8,15 +8,30 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AFloorTile;
 #ifdef ENDLESSRUNNER_RunGameMode_generated_h
 #error "RunGameMode.generated.h already included, missing '#pragma once' in RunGameMode.h"
 #endif
 #define ENDLESSRUNNER_RunGameMode_generated_h
 
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_SPARSE_DATA
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_RPC_WRAPPERS
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_INCLASS_NO_PURE_DECLS \
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_SPARSE_DATA
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execAddFloorTile); \
+	DECLARE_FUNCTION(execCreateInitialFloorTiles); \
+	DECLARE_FUNCTION(execDestroyTile); \
+	DECLARE_FUNCTION(execOnHitCollider);
+
+
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execAddFloorTile); \
+	DECLARE_FUNCTION(execCreateInitialFloorTiles); \
+	DECLARE_FUNCTION(execDestroyTile); \
+	DECLARE_FUNCTION(execOnHitCollider);
+
+
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesARunGameMode(); \
 	friend struct Z_Construct_UClass_ARunGameMode_Statics; \
@@ -25,7 +40,7 @@ public: \
 	DECLARE_SERIALIZER(ARunGameMode)
 
 
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_INCLASS \
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesARunGameMode(); \
 	friend struct Z_Construct_UClass_ARunGameMode_Statics; \
@@ -34,7 +49,7 @@ public: \
 	DECLARE_SERIALIZER(ARunGameMode)
 
 
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_STANDARD_CONSTRUCTORS \
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ARunGameMode(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ARunGameMode) \
@@ -47,7 +62,7 @@ private: \
 public:
 
 
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_ENHANCED_CONSTRUCTORS \
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ARunGameMode(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -60,28 +75,28 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ARunGameMode); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ARunGameMode)
 
 
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_PRIVATE_PROPERTY_OFFSET
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_12_PROLOG
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_GENERATED_BODY_LEGACY \
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_PRIVATE_PROPERTY_OFFSET
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_13_PROLOG
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_PRIVATE_PROPERTY_OFFSET \
-	EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_SPARSE_DATA \
-	EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_RPC_WRAPPERS \
-	EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_INCLASS \
-	EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_STANDARD_CONSTRUCTORS \
+	EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_PRIVATE_PROPERTY_OFFSET \
+	EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_SPARSE_DATA \
+	EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_RPC_WRAPPERS \
+	EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_INCLASS \
+	EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_GENERATED_BODY \
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_PRIVATE_PROPERTY_OFFSET \
-	EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_SPARSE_DATA \
-	EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_INCLASS_NO_PURE_DECLS \
-	EndlessRunner_Source_EndlessRunner_RunGameMode_h_15_ENHANCED_CONSTRUCTORS \
+	EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_PRIVATE_PROPERTY_OFFSET \
+	EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_SPARSE_DATA \
+	EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_INCLASS_NO_PURE_DECLS \
+	EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

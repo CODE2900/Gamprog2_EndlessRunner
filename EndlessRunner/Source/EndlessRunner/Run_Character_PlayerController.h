@@ -16,17 +16,18 @@ class ENDLESSRUNNER_API ARun_Character_PlayerController : public APlayerControll
 	GENERATED_BODY()
 	
 public:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	
-	class ARun_Character* RunCharacter;
+
 	virtual void SetupInputComponent() override;
 	virtual void Tick(float DeltaTime) override;
 
+protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		class ARun_Character* RunCharacter;
+
+	virtual void BeginPlay() override;
+
 	void MoveForward(float scale);
 	void MoveRight(float scale);
-
-protected:
-	virtual void BeginPlay() override;
 private:
-
+	
 };

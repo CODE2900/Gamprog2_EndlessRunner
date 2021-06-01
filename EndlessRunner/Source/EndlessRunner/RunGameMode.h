@@ -28,7 +28,7 @@ public:
 		FTransform NextSpawnPoint;
 
 	UFUNCTION(BlueprintCallable)
-		void OnHitCollider(class AFloorTile* tile);
+	void OnHitCollider(class AFloorTile* tile);
 
 	UFUNCTION(BlueprintCallable)
 	void DestroyTile(AFloorTile* tile);

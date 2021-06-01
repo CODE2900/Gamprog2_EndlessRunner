@@ -22,7 +22,6 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
-	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FTimerHandle();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UArrowComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
@@ -218,10 +217,6 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 #endif
 		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_TileExited;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Time_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Time;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Scene_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Scene;
@@ -259,10 +254,8 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloorTile_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "//DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTileExitedSignature, class ARun_Character*, RunCharacter);\n" },
 		{ "IncludePath", "FloorTile.h" },
 		{ "ModuleRelativePath", "FloorTile.h" },
-		{ "ToolTip", "DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTileExitedSignature, class ARun_Character*, RunCharacter);" },
 	};
 #endif
 #if WITH_METADATA
@@ -271,13 +264,6 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 	};
 #endif
 	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AFloorTile_Statics::NewProp_TileExited = { "TileExited", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFloorTile, TileExited), Z_Construct_UDelegateFunction_EndlessRunner_TileExitedSignature__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AFloorTile_Statics::NewProp_TileExited_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloorTile_Statics::NewProp_TileExited_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloorTile_Statics::NewProp_Time_MetaData[] = {
-		{ "Category", "FloorTile" },
-		{ "ModuleRelativePath", "FloorTile.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AFloorTile_Statics::NewProp_Time = { "Time", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFloorTile, Time), Z_Construct_UScriptStruct_FTimerHandle, METADATA_PARAMS(Z_Construct_UClass_AFloorTile_Statics::NewProp_Time_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloorTile_Statics::NewProp_Time_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloorTile_Statics::NewProp_Scene_MetaData[] = {
 		{ "Category", "FloorTile" },
@@ -328,7 +314,6 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFloorTile_Statics::NewProp_Wall2 = { "Wall2", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFloorTile, Wall2), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFloorTile_Statics::NewProp_Wall2_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloorTile_Statics::NewProp_Wall2_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFloorTile_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_TileExited,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_Time,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_Scene,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_Arrow,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_Box,
@@ -363,7 +348,7 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFloorTile, 2859529059);
+	IMPLEMENT_CLASS(AFloorTile, 2780307149);
 	template<> ENDLESSRUNNER_API UClass* StaticClass<AFloorTile>()
 	{
 		return AFloorTile::StaticClass();

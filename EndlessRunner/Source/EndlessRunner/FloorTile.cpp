@@ -53,7 +53,7 @@ void AFloorTile::BeginPlay()
 
 /*void AFloorTile::DestroyTile()
 {
-	this->Destroy();
+	Destroy();
 }*/
 
 void AFloorTile::OnHit(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)

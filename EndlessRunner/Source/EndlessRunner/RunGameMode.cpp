@@ -50,6 +50,7 @@ void ARunGameMode::OnHitCollider(AFloorTile* tile)
 {
 	AddFloorTile();
 
+	//Delay
 	FTimerHandle Time;
 	FTimerDelegate TimerDelagate = FTimerDelegate::CreateUObject(this, &ARunGameMode::DestroyTile, tile);
 

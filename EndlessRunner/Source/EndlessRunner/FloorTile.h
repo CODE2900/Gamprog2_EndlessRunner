@@ -8,8 +8,6 @@
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTileExitedSignature, class AFloorTile*, FloorTile);
 
-//DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTileExitedSignature, class ARun_Character*, RunCharacter);
-
 
 UCLASS()
 class ENDLESSRUNNER_API AFloorTile : public AActor
@@ -23,8 +21,8 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FTileExitedSignature TileExited;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	FTimerHandle Time;
+	/*UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FTimerHandle Time;*/
 
 	
 

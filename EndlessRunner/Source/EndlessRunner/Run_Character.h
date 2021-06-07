@@ -6,6 +6,10 @@
 #include "GameFramework/Character.h"
 #include "Run_Character.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDeathSignature, class ARun_Character*, RunCharacter);
+
+
+
 UCLASS()
 class ENDLESSRUNNER_API ARun_Character : public ACharacter
 {
@@ -14,6 +18,10 @@ class ENDLESSRUNNER_API ARun_Character : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ARun_Character();
+
+	UPROPERTY(BlueprintAssignable)
+		FOnDeathSignature OnDeath;
+	
 
 protected:
 	// Called when the game starts or when spawned
@@ -25,8 +33,12 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		class USpringArmComponent* SpringArm;
 
-	//void MoveForward(float scale);
-	//void MoveSide(float scale);
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		bool isDead;
+	
+	
+	
+	
 
 public:	
 	// Called every frame
@@ -35,6 +47,14 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable)
+		void Die();
+
+	UFUNCTION()
+		bool getIsDead();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void deathEffects(ARun_Character* RunCharacter);
 
 	
 };

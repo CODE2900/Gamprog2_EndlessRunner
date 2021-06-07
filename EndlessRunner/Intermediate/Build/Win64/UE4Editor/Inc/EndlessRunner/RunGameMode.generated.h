@@ -75,7 +75,11 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ARunGameMode); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ARunGameMode)
 
 
-#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_PRIVATE_PROPERTY_OFFSET
+#define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__NumInitialFloorTiles() { return STRUCT_OFFSET(ARunGameMode, NumInitialFloorTiles); } \
+	FORCEINLINE static uint32 __PPO__NextSpawnPoint() { return STRUCT_OFFSET(ARunGameMode, NextSpawnPoint); }
+
+
 #define EndlessRunner_Source_EndlessRunner_RunGameMode_h_13_PROLOG
 #define EndlessRunner_Source_EndlessRunner_RunGameMode_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

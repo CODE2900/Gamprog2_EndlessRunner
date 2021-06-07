@@ -34,12 +34,14 @@ static inline void FTileExitedSignature_DelegateWrapper(const FMulticastScriptDe
 #define EndlessRunner_Source_EndlessRunner_FloorTile_h_15_SPARSE_DATA
 #define EndlessRunner_Source_EndlessRunner_FloorTile_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execSpawnObstacle); \
 	DECLARE_FUNCTION(execGetAttachPointTransform); \
 	DECLARE_FUNCTION(execOnHit);
 
 
 #define EndlessRunner_Source_EndlessRunner_FloorTile_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSpawnObstacle); \
 	DECLARE_FUNCTION(execGetAttachPointTransform); \
 	DECLARE_FUNCTION(execOnHit);
 
@@ -92,7 +94,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AFloorTile); \
 	FORCEINLINE static uint32 __PPO__Box() { return STRUCT_OFFSET(AFloorTile, Box); } \
 	FORCEINLINE static uint32 __PPO__Floor() { return STRUCT_OFFSET(AFloorTile, Floor); } \
 	FORCEINLINE static uint32 __PPO__Wall() { return STRUCT_OFFSET(AFloorTile, Wall); } \
-	FORCEINLINE static uint32 __PPO__Wall2() { return STRUCT_OFFSET(AFloorTile, Wall2); }
+	FORCEINLINE static uint32 __PPO__Wall2() { return STRUCT_OFFSET(AFloorTile, Wall2); } \
+	FORCEINLINE static uint32 __PPO__SpawnArea() { return STRUCT_OFFSET(AFloorTile, SpawnArea); }
 
 
 #define EndlessRunner_Source_EndlessRunner_FloorTile_h_12_PROLOG

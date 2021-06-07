@@ -21,10 +21,13 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FTileExitedSignature TileExited;
 
-	/*UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	FTimerHandle Time;*/
-
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		TArray<TSubclassOf<class AObstacle>> rockObstacle;
 	
+	
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		class AObstacle* TrashCan;
 
 protected:
 	// Called when the game starts or when spawned
@@ -52,15 +55,18 @@ protected:
 	UFUNCTION(BlueprintCallable)
 		void OnHit(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		class UBoxComponent* SpawnArea;
 	
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION()
 		FTransform GetAttachPointTransform();
-	/*UFUNCTION(BlueprintCallable)
-		void DestroyTile();*/
+	
+	UFUNCTION()
+		void SpawnObstacle();
 	
 };

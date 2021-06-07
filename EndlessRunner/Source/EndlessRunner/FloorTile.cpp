@@ -10,6 +10,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "RunGameMode.h"
 #include "TimerManager.h"
+#include "Kismet/KismetMathLibrary.h"
+#include "Obstacle.h"
 
 // Sets default values
 AFloorTile::AFloorTile()
@@ -35,6 +37,11 @@ AFloorTile::AFloorTile()
 	
 	Wall2 = CreateDefaultSubobject<UStaticMeshComponent>("Wall2");
 	Wall2->SetupAttachment(Scene);
+
+	SpawnArea = CreateDefaultSubobject<UBoxComponent>("SpawnArea");
+	SpawnArea->SetupAttachment(Scene);
+
+
 }
 
 
@@ -45,6 +52,8 @@ void AFloorTile::BeginPlay()
 	Super::BeginPlay();
 
 	Box->OnComponentBeginOverlap.AddDynamic(this, &AFloorTile::OnHit);
+
+	SpawnObstacle();
 
 	//TileExited.AddDynamic(Cast<ARunGameMode>(UGameplayStatics::GetGameMode(GetWorld())), &ARunGameMode::OnHitCollider);
 	
@@ -61,6 +70,7 @@ void AFloorTile::OnHit(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, 
 	if (ARun_Character* player = Cast<ARun_Character>(OtherActor))
 	{
 		TileExited.Broadcast(this);
+		TrashCan->Destroy();
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "Pass Thru");
 	}
 	
@@ -78,5 +88,19 @@ FTransform AFloorTile::GetAttachPointTransform()
 {
 	return Arrow->GetComponentTransform();
 }
+
+void AFloorTile::SpawnObstacle()
+{
+	FVector SpawnPoint = UKismetMathLibrary::RandomPointInBoundingBox(SpawnArea->Bounds.Origin, SpawnArea->Bounds.BoxExtent);
+	/*FTransform SpawnPointArea;
+	SpawnPointArea.SetLocation(SpawnPoint);*/
+
+	AObstacle* rock = GetWorld()->SpawnActor<AObstacle>(rockObstacle[0],SpawnPoint,FRotator(0),FActorSpawnParameters());
+	rock->AttachToActor(this, FAttachmentTransformRules(EAttachmentRule::KeepWorld, true), AFloorTile::GetAttachParentSocketName());
+
+	TrashCan = rock;
+}
+
+
 
 

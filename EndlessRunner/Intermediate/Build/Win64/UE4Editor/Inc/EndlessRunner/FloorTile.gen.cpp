@@ -22,6 +22,8 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	ENDLESSRUNNER_API UClass* Z_Construct_UClass_AObstacle_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UArrowComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
@@ -59,6 +61,13 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 		}
 		return ReturnFunction;
 	}
+	DEFINE_FUNCTION(AFloorTile::execSpawnObstacle)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SpawnObstacle();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AFloorTile::execGetAttachPointTransform)
 	{
 		P_FINISH;
@@ -85,6 +94,7 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "GetAttachPointTransform", &AFloorTile::execGetAttachPointTransform },
 			{ "OnHit", &AFloorTile::execOnHit },
+			{ "SpawnObstacle", &AFloorTile::execSpawnObstacle },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -110,7 +120,7 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 		{ "ModuleRelativePath", "FloorTile.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AFloorTile_GetAttachPointTransform_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFloorTile, nullptr, "GetAttachPointTransform", nullptr, nullptr, sizeof(FloorTile_eventGetAttachPointTransform_Parms), Z_Construct_UFunction_AFloorTile_GetAttachPointTransform_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AFloorTile_GetAttachPointTransform_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFloorTile_GetAttachPointTransform_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFloorTile_GetAttachPointTransform_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AFloorTile_GetAttachPointTransform_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFloorTile, nullptr, "GetAttachPointTransform", nullptr, nullptr, sizeof(FloorTile_eventGetAttachPointTransform_Parms), Z_Construct_UFunction_AFloorTile_GetAttachPointTransform_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AFloorTile_GetAttachPointTransform_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFloorTile_GetAttachPointTransform_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFloorTile_GetAttachPointTransform_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_AFloorTile_GetAttachPointTransform()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -201,6 +211,28 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AFloorTile_SpawnObstacle_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFloorTile_SpawnObstacle_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "FloorTile.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AFloorTile_SpawnObstacle_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFloorTile, nullptr, "SpawnObstacle", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFloorTile_SpawnObstacle_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFloorTile_SpawnObstacle_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AFloorTile_SpawnObstacle()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AFloorTile_SpawnObstacle_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AFloorTile_NoRegister()
 	{
 		return AFloorTile::StaticClass();
@@ -216,6 +248,15 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TileExited_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_TileExited;
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_rockObstacle_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_rockObstacle_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_rockObstacle;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TrashCan_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_TrashCan;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Scene_MetaData[];
 #endif
@@ -240,6 +281,10 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Wall2_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Wall2;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SpawnArea_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SpawnArea;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -249,8 +294,9 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_EndlessRunner,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AFloorTile_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AFloorTile_GetAttachPointTransform, "GetAttachPointTransform" }, // 1036511862
+		{ &Z_Construct_UFunction_AFloorTile_GetAttachPointTransform, "GetAttachPointTransform" }, // 3755760682
 		{ &Z_Construct_UFunction_AFloorTile_OnHit, "OnHit" }, // 1211024270
+		{ &Z_Construct_UFunction_AFloorTile_SpawnObstacle, "SpawnObstacle" }, // 3432966673
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloorTile_Statics::Class_MetaDataParams[] = {
@@ -264,6 +310,21 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 	};
 #endif
 	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AFloorTile_Statics::NewProp_TileExited = { "TileExited", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFloorTile, TileExited), Z_Construct_UDelegateFunction_EndlessRunner_TileExitedSignature__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AFloorTile_Statics::NewProp_TileExited_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloorTile_Statics::NewProp_TileExited_MetaData)) };
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AFloorTile_Statics::NewProp_rockObstacle_Inner = { "rockObstacle", nullptr, (EPropertyFlags)0x0004000000000000, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AObstacle_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloorTile_Statics::NewProp_rockObstacle_MetaData[] = {
+		{ "Category", "FloorTile" },
+		{ "ModuleRelativePath", "FloorTile.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AFloorTile_Statics::NewProp_rockObstacle = { "rockObstacle", nullptr, (EPropertyFlags)0x0014000000000015, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFloorTile, rockObstacle), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AFloorTile_Statics::NewProp_rockObstacle_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloorTile_Statics::NewProp_rockObstacle_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloorTile_Statics::NewProp_TrashCan_MetaData[] = {
+		{ "Category", "FloorTile" },
+		{ "ModuleRelativePath", "FloorTile.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFloorTile_Statics::NewProp_TrashCan = { "TrashCan", nullptr, (EPropertyFlags)0x0010000000000015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFloorTile, TrashCan), Z_Construct_UClass_AObstacle_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFloorTile_Statics::NewProp_TrashCan_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloorTile_Statics::NewProp_TrashCan_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloorTile_Statics::NewProp_Scene_MetaData[] = {
 		{ "Category", "FloorTile" },
@@ -312,14 +373,26 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFloorTile_Statics::NewProp_Wall2 = { "Wall2", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFloorTile, Wall2), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFloorTile_Statics::NewProp_Wall2_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloorTile_Statics::NewProp_Wall2_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloorTile_Statics::NewProp_SpawnArea_MetaData[] = {
+		{ "Category", "FloorTile" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "FloorTile.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFloorTile_Statics::NewProp_SpawnArea = { "SpawnArea", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFloorTile, SpawnArea), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFloorTile_Statics::NewProp_SpawnArea_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloorTile_Statics::NewProp_SpawnArea_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFloorTile_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_TileExited,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_rockObstacle_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_rockObstacle,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_TrashCan,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_Scene,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_Arrow,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_Box,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_Floor,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_Wall,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_Wall2,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloorTile_Statics::NewProp_SpawnArea,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AFloorTile_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AFloorTile>::IsAbstract,
@@ -348,7 +421,7 @@ void EmptyLinkFunctionForGeneratedCodeFloorTile() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFloorTile, 2780307149);
+	IMPLEMENT_CLASS(AFloorTile, 3238688251);
 	template<> ENDLESSRUNNER_API UClass* StaticClass<AFloorTile>()
 	{
 		return AFloorTile::StaticClass();

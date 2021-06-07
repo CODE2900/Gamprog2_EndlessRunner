@@ -229,14 +229,14 @@ void EmptyLinkFunctionForGeneratedCodeRunGameMode() {}
 		{ "ModuleRelativePath", "RunGameMode.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ARunGameMode_Statics::NewProp_NumInitialFloorTiles = { "NumInitialFloorTiles", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ARunGameMode, NumInitialFloorTiles), METADATA_PARAMS(Z_Construct_UClass_ARunGameMode_Statics::NewProp_NumInitialFloorTiles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ARunGameMode_Statics::NewProp_NumInitialFloorTiles_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ARunGameMode_Statics::NewProp_NumInitialFloorTiles = { "NumInitialFloorTiles", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ARunGameMode, NumInitialFloorTiles), METADATA_PARAMS(Z_Construct_UClass_ARunGameMode_Statics::NewProp_NumInitialFloorTiles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ARunGameMode_Statics::NewProp_NumInitialFloorTiles_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARunGameMode_Statics::NewProp_NextSpawnPoint_MetaData[] = {
 		{ "Category", "Runtime" },
 		{ "ModuleRelativePath", "RunGameMode.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ARunGameMode_Statics::NewProp_NextSpawnPoint = { "NextSpawnPoint", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ARunGameMode, NextSpawnPoint), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(Z_Construct_UClass_ARunGameMode_Statics::NewProp_NextSpawnPoint_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ARunGameMode_Statics::NewProp_NextSpawnPoint_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ARunGameMode_Statics::NewProp_NextSpawnPoint = { "NextSpawnPoint", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ARunGameMode, NextSpawnPoint), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(Z_Construct_UClass_ARunGameMode_Statics::NewProp_NextSpawnPoint_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ARunGameMode_Statics::NewProp_NextSpawnPoint_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ARunGameMode_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARunGameMode_Statics::NewProp_FloorTileClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARunGameMode_Statics::NewProp_NumInitialFloorTiles,
@@ -269,7 +269,7 @@ void EmptyLinkFunctionForGeneratedCodeRunGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ARunGameMode, 2957793390);
+	IMPLEMENT_CLASS(ARunGameMode, 3204124724);
 	template<> ENDLESSRUNNER_API UClass* StaticClass<ARunGameMode>()
 	{
 		return ARunGameMode::StaticClass();

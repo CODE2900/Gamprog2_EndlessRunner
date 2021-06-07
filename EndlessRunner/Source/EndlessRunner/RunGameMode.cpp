@@ -23,6 +23,7 @@ void ARunGameMode::AddFloorTile()
 	{
 		AFloorTile* Tile = World->SpawnActor<AFloorTile>(FloorTileClass, NextSpawnPoint);
 		
+		
 		if (Tile)
 		{
 			NextSpawnPoint = Tile->GetAttachPointTransform();
@@ -35,6 +36,7 @@ void ARunGameMode::AddFloorTile()
 void ARunGameMode::DestroyTile(AFloorTile* tile)
 {
 	tile->Destroy();
+
 }
 
 void ARunGameMode::BeginPlay()

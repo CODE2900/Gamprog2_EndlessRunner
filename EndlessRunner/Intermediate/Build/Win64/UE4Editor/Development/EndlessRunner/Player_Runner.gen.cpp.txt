@@ -1,5 +1,0 @@
-D:\Gamprog2\EndlessRunner\Intermediate\Build\Win64\UE4Editor\Development\EndlessRunner\Definitions.EndlessRunner.h
-D:\Epic games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-D:\Epic games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-D:\Gamprog2\EndlessRunner\Source\EndlessRunner/Player_Runner.h
-D:\Gamprog2\EndlessRunner\Intermediate\Build\Win64\UE4Editor\Inc\EndlessRunner\Player_Runner.generated.h

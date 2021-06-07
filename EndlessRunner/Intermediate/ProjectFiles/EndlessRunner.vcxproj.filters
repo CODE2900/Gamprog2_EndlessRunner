@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\EndlessRunner.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{AA1115FF-FC70-4656-8BDB-0F2514730033}</UniqueIdentifier>
+      <UniqueIdentifier>{5AD60799-6673-4130-B200-2D2405F99757}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\EndlessRunner.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\EndlessRunnerEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{CA36C4CA-7652-460D-B145-E643C4074262}</UniqueIdentifier>
+      <UniqueIdentifier>{D1177A46-51F4-4DC5-B6BC-5386BEFEA2EA}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\EndlessRunner">
-      <UniqueIdentifier>{6742B375-8CA7-4889-B2C3-BEDFD4728D40}</UniqueIdentifier>
+      <UniqueIdentifier>{4660C958-142B-4AF5-AD86-D481744E5B71}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\EndlessRunner\EndlessRunner.Build.cs">
       <Filter>Source\EndlessRunner</Filter>
@@ -57,6 +59,12 @@
       <Filter>Source\EndlessRunner</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\EndlessRunner\FloorTile.h">
+      <Filter>Source\EndlessRunner</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\EndlessRunner\Obstacle.cpp">
+      <Filter>Source\EndlessRunner</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\EndlessRunner\Obstacle.h">
       <Filter>Source\EndlessRunner</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\EndlessRunner\PlayerSample.cpp">

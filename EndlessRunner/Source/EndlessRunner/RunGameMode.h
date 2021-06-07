@@ -20,15 +20,8 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Config")
 		class TSubclassOf<class AFloorTile> FloorTileClass;
 		
-	
-	UPROPERTY(EditAnywhere, Category = "Config")
-		int32 NumInitialFloorTiles = 10;
-
-	UPROPERTY(VisibleAnywhere, Category = "Runtime")
-		FTransform NextSpawnPoint;
-
 	UFUNCTION(BlueprintCallable)
-		void OnHitCollider(class AFloorTile* tile);
+	void OnHitCollider(class AFloorTile* tile);
 
 	UFUNCTION(BlueprintCallable)
 	void DestroyTile(AFloorTile* tile);
@@ -43,6 +36,11 @@ public:
 protected:
 	virtual void BeginPlay() override;
 	
+	UPROPERTY(EditAnywhere, Category = "Config")
+		int32 NumInitialFloorTiles = 10;
+
+	UPROPERTY(VisibleAnywhere, Category = "Runtime")
+		FTransform NextSpawnPoint;
 	
 	
 };

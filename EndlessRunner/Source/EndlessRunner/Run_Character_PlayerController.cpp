@@ -29,8 +29,12 @@ void ARun_Character_PlayerController::BeginPlay()
 void ARun_Character_PlayerController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	MoveForward(1);
+	
+	if (RunCharacter->getIsDead() != true)
+	{
+		MoveForward(1);
+		
+	}
 }
 
 void ARun_Character_PlayerController::SetupInputComponent()

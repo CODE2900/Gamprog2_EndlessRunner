@@ -12,6 +12,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeEndlessRunner_init() {}
 	ENDLESSRUNNER_API UFunction* Z_Construct_UDelegateFunction_EndlessRunner_TileExitedSignature__DelegateSignature();
+	ENDLESSRUNNER_API UFunction* Z_Construct_UDelegateFunction_EndlessRunner_OnDeathSignature__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_EndlessRunner()
 	{
 		static UPackage* ReturnPackage = nullptr;
@@ -19,14 +20,15 @@ void EmptyLinkFunctionForGeneratedCodeEndlessRunner_init() {}
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
 				(UObject* (*)())Z_Construct_UDelegateFunction_EndlessRunner_TileExitedSignature__DelegateSignature,
+				(UObject* (*)())Z_Construct_UDelegateFunction_EndlessRunner_OnDeathSignature__DelegateSignature,
 			};
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/EndlessRunner",
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x3BA9BFBF,
-				0xEADEEAAD,
+				0x12D16F6C,
+				0x1BC82886,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

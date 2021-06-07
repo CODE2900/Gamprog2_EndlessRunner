@@ -23,6 +23,7 @@ void ARunGameMode::AddFloorTile()
 	{
 		AFloorTile* Tile = World->SpawnActor<AFloorTile>(FloorTileClass, NextSpawnPoint);
 		
+		
 		if (Tile)
 		{
 			NextSpawnPoint = Tile->GetAttachPointTransform();
@@ -35,6 +36,7 @@ void ARunGameMode::AddFloorTile()
 void ARunGameMode::DestroyTile(AFloorTile* tile)
 {
 	tile->Destroy();
+
 }
 
 void ARunGameMode::BeginPlay()
@@ -50,6 +52,7 @@ void ARunGameMode::OnHitCollider(AFloorTile* tile)
 {
 	AddFloorTile();
 
+	//Delay
 	FTimerHandle Time;
 	FTimerDelegate TimerDelagate = FTimerDelegate::CreateUObject(this, &ARunGameMode::DestroyTile, tile);
 

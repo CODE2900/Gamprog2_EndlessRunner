@@ -23,11 +23,15 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		TArray<TSubclassOf<class AObstacle>> rockObstacle;
-	
-	
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		class AObstacle* TrashCan;
+		TArray<class AObstacle*> ObstacleStorage;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		TArray<TSubclassOf<class APickups>> Pickups;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		TArray<class APickups*> pickupStorage;
 
 protected:
 	// Called when the game starts or when spawned
@@ -42,6 +46,8 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		class UBoxComponent* Box;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		class UBoxComponent* CoinBox;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		class UStaticMeshComponent* Floor;
@@ -69,4 +75,12 @@ public:
 	UFUNCTION()
 		void SpawnObstacle();
 	
+	UFUNCTION()
+		void DestroyObstacle();
+
+	UFUNCTION()
+		void SpawnPickup();
+
+	UFUNCTION()
+		void DestroyPickup();
 };

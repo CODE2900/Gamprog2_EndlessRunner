@@ -36,9 +36,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		bool isDead;
 	
-	
-	
-	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		int32 coins;
 
 public:	
 	// Called every frame
@@ -55,6 +54,14 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void deathEffects(ARun_Character* RunCharacter);
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void pickupEffects(ARun_Character* RunCharacter);
+	
+	UFUNCTION(BlueprintCallable)
+		void addCoin(); 
+
+	
 
 	
 };

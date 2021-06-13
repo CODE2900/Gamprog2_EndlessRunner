@@ -12,6 +12,7 @@
 #include "TimerManager.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Obstacle.h"
+#include "Pickups.h"
 
 // Sets default values
 AFloorTile::AFloorTile()
@@ -19,27 +20,30 @@ AFloorTile::AFloorTile()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	Scene = CreateDefaultSubobject<USceneComponent>("Scene");
-	SetRootComponent(Scene);
+	RootComponent = CreateDefaultSubobject<USceneComponent>("Scene");
+	//SetRootComponent(Scene);
 
 	Arrow = CreateDefaultSubobject<UArrowComponent>("Arrow");
-	Arrow->SetupAttachment(Scene);
+	Arrow->SetupAttachment(RootComponent);
 	
 
 	Box = CreateDefaultSubobject<UBoxComponent>("Box");
-	Box->SetupAttachment(Scene);
+	Box->SetupAttachment(RootComponent);
+
+	CoinBox = CreateDefaultSubobject<UBoxComponent>("CoinBox");
+	CoinBox->SetupAttachment(RootComponent);
 
 	Floor = CreateDefaultSubobject<UStaticMeshComponent>("Floor");
-	Floor->SetupAttachment(Scene);
+	Floor->SetupAttachment(RootComponent);
 	
 	Wall = CreateDefaultSubobject<UStaticMeshComponent>("Wall");
-	Wall->SetupAttachment(Scene);
+	Wall->SetupAttachment(RootComponent);
 	
 	Wall2 = CreateDefaultSubobject<UStaticMeshComponent>("Wall2");
-	Wall2->SetupAttachment(Scene);
+	Wall2->SetupAttachment(RootComponent);
 
 	SpawnArea = CreateDefaultSubobject<UBoxComponent>("SpawnArea");
-	SpawnArea->SetupAttachment(Scene);
+	SpawnArea->SetupAttachment(RootComponent);
 
 
 }
@@ -53,8 +57,25 @@ void AFloorTile::BeginPlay()
 
 	Box->OnComponentBeginOverlap.AddDynamic(this, &AFloorTile::OnHit);
 
-	SpawnObstacle();
+	int32 chance = rand() % 100 + 1;
 
+	if (chance >= 50)
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			SpawnObstacle();
+		}
+	}
+	else
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			SpawnPickup();
+		}
+	}
+	
+
+	
 	//TileExited.AddDynamic(Cast<ARunGameMode>(UGameplayStatics::GetGameMode(GetWorld())), &ARunGameMode::OnHitCollider);
 	
 	
@@ -70,7 +91,11 @@ void AFloorTile::OnHit(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, 
 	if (ARun_Character* player = Cast<ARun_Character>(OtherActor))
 	{
 		TileExited.Broadcast(this);
-		TrashCan->Destroy();
+		//ObstacleStorage->Destroy();
+
+		DestroyObstacle();
+		DestroyPickup();
+
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "Pass Thru");
 	}
 	
@@ -98,7 +123,33 @@ void AFloorTile::SpawnObstacle()
 	AObstacle* rock = GetWorld()->SpawnActor<AObstacle>(rockObstacle[0],SpawnPoint,FRotator(0),FActorSpawnParameters());
 	rock->AttachToActor(this, FAttachmentTransformRules(EAttachmentRule::KeepWorld, true), AFloorTile::GetAttachParentSocketName());
 
-	TrashCan = rock;
+	ObstacleStorage.Add(rock);
+}
+
+void AFloorTile::DestroyObstacle()
+{
+	for (int32 i = 0; i < ObstacleStorage.Num(); i++)
+	{
+		ObstacleStorage[i]->Destroy();
+	}
+}
+
+void AFloorTile::SpawnPickup()
+{
+	FVector PickUp_SpawnPoint = UKismetMathLibrary::RandomPointInBoundingBox(CoinBox->Bounds.Origin, CoinBox->Bounds.BoxExtent);
+
+	APickups* coins = GetWorld()->SpawnActor<APickups>(Pickups[0], PickUp_SpawnPoint, FRotator(0), FActorSpawnParameters());
+	coins->AttachToActor(this, FAttachmentTransformRules(EAttachmentRule::KeepWorld, true), AFloorTile::GetAttachParentSocketName());
+
+	pickupStorage.Add(coins);
+}
+
+void AFloorTile::DestroyPickup()
+{
+	for (int32 i = 0; i < pickupStorage.Num(); i++)
+	{
+		pickupStorage[i]->Destroy();
+	}
 }
 
 

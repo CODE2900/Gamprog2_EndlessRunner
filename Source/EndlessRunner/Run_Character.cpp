@@ -36,6 +36,10 @@ bool ARun_Character::getIsDead()
 {
 	return isDead;
 }
+void ARun_Character::addCoin()
+{
+	coins++;
+}
 // Called every frame
 void ARun_Character::Tick(float DeltaTime)
 {
@@ -56,7 +60,7 @@ void ARun_Character::Die()
 
 	GetMesh()->SetVisibility(false);
 	ARun_Character_PlayerController* Character_Controller = Cast<ARun_Character_PlayerController>(GetController());
-	DisableInput(Character_Controller);
+	Character_Controller->DisableInput(Character_Controller);
 
 	OnDeath.Broadcast(this);
 

@@ -96,7 +96,7 @@ void AFloorTile::OnHit(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, 
 		DestroyObstacle();
 		DestroyPickup();
 
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "Pass Thru");
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "Pass Thru");
 	}
 	
 	//GetWorldTimerManager().SetTimer(Time,this,&AFloorTile::DestroyTile,1.5f,false);
@@ -146,10 +146,22 @@ void AFloorTile::SpawnPickup()
 
 void AFloorTile::DestroyPickup()
 {
-	for (int32 i = 0; i < pickupStorage.Num(); i++)
+	if (pickupStorage.Num() > 0)
 	{
-		pickupStorage[i]->Destroy();
+		for (int32 i = 0; i < pickupStorage.Num(); i++)
+		{
+			if (pickupStorage[i] != nullptr)
+			{
+				pickupStorage[i]->Destroy();
+			}
+			else
+			{
+				return;
+			}
+			
+		}
 	}
+	
 }
 
 
